@@ -1,0 +1,151 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Dark mode: tema gelap menyeluruh */
+.dark, .dark body { color: rgb(241 245 249); }
+.dark .bg-white { background-color: rgb(15 23 42) !important; }
+.dark .bg-slate-50 { background-color: rgb(30 41 59) !important; }
+.dark .bg-slate-100 { background-color: rgb(51 65 85) !important; }
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-300 { border-color: rgb(51 65 85) !important; }
+.dark img.border-slate-200 { border-color: rgb(71 85 105) !important; }
+.dark .text-slate-800,
+.dark .text-slate-700 { color: rgb(241 245 249) !important; }
+.dark .text-slate-600,
+.dark .text-slate-500 { color: rgb(203 213 225) !important; }
+.dark .text-slate-400,
+.dark .text-slate-300 { color: rgb(148 163 184) !important; }
+.dark .text-slate-200,
+.dark .text-slate-100 { color: rgb(248 250 252) !important; }
+.dark [class*="text-gray"] { color: rgb(203 213 225) !important; }
+.dark .divide-slate-50 > *,
+.dark .divide-slate-100 > * { border-color: rgb(51 65 85) !important; }
+.dark tbody tr:hover,
+.dark tr.hover\:bg-slate-50:hover,
+.dark [class*="hover:bg-slate"]:hover { background-color: rgb(30 41 59) !important; }
+.dark thead.bg-slate-50 { background-color: rgb(30 41 59) !important; }
+.dark input,
+.dark select,
+.dark textarea { background-color: rgb(30 41 59) !important; border-color: rgb(71 85 105) !important; color: rgb(248 250 252) !important; }
+.dark input::placeholder,
+.dark textarea::placeholder { color: rgba(148 163 184); }
+.dark select option { background: rgb(30 41 59); color: rgb(248 250 252); }
+.dark .ring-indigo-200 { --tw-ring-color: rgb(99 102 241); }
+.dark .ring-indigo-500 { --tw-ring-color: rgb(99 102 241); }
+/* Badges & semantic colors */
+.dark .bg-amber-50,
+.dark .bg-amber-100 { background-color: rgb(69 26 3) !important; }
+.dark .bg-emerald-50,
+.dark .bg-emerald-100 { background-color: rgb(5 46 22) !important; }
+.dark .bg-indigo-50 { background-color: rgb(30 27 75) !important; }
+.dark .bg-rose-50,
+.dark .bg-rose-100,
+.dark .bg-red-50,
+.dark .bg-red-100 { background-color: rgb(69 10 10) !important; }
+.dark .bg-blue-50,
+.dark .bg-blue-100 { background-color: rgb(30 58 138) !important; }
+.dark .bg-green-50,
+.dark .bg-green-100 { background-color: rgb(5 46 22) !important; }
+.dark .bg-purple-50,
+.dark .bg-purple-100 { background-color: rgb(46 16 101) !important; }
+.dark .border-amber-200,
+.dark .border-indigo-200,
+.dark .border-indigo-300,
+.dark .border-emerald-200 { border-color: rgb(71 85 105) !important; }
+.dark .border-red-200 { border-color: rgb(185 28 28) !important; }
+.dark .text-amber-600,
+.dark .text-amber-700,
+.dark .text-amber-800 { color: rgb(253 230 138) !important; }
+.dark .text-indigo-600,
+.dark .text-indigo-700,
+.dark a.text-indigo-600:hover,
+.dark a.text-indigo-700:hover { color: rgb(165 180 252) !important; }
+.dark .text-emerald-600,
+.dark .text-emerald-700,
+.dark .text-emerald-800,
+.dark .text-emerald-300 { color: rgb(134 239 172) !important; }
+.dark .text-red-600,
+.dark .text-red-700,
+.dark .text-red-800,
+.dark .text-red-300 { color: rgb(252 165 165) !important; }
+.dark .text-amber-600,
+.dark .text-amber-300 { color: rgb(253 230 138) !important; }
+.dark .text-blue-600,
+.dark .text-blue-700 { color: rgb(147 197 253) !important; }
+.dark .text-green-700 { color: rgb(134 239 172) !important; }
+.dark .text-purple-600,
+.dark .text-purple-700 { color: rgb(216 180 254) !important; }
+ .dark nav[role="navigation"] a { color: rgb(248 250 252); }
+ .dark nav[role="navigation"] a:hover { opacity: 0.9; }
+ /* Placeholder & SVG icons inheriting text color */
+ .dark .text-slate-300 svg,
+ .dark .text-slate-400 svg,
+ .dark .text-slate-500 svg { color: inherit; }
+ /* Vertical tabs (profile, user edit) */
+ .vtab { color: #64748b; }
+ .vtab:hover:not(.active) { background: #f8fafc; color: #334155; }
+ .vtab.active { background: #eef2ff; color: #4f46e5; }
+ .dark .vtab { color: rgb(148 163 184); }
+ .dark .vtab:hover:not(.active) { background: rgb(51 65 85); color: rgb(241 245 249); }
+ .dark .vtab.active { background: rgb(30 27 75); color: rgb(165 180 252); }
+
+ /* Layout components (sidebar, glass, image preview) */
+ * { font-family: 'Inter', sans-serif; }
+ .sidebar-link.active { background: #6366f1; color: white; }
+ .sidebar-link:not(.active) { color: #475569; }
+ .sidebar-link:not(.active):hover { background-color: #f1f5f9; }
+ .dark .sidebar-link:not(.active) { color: #cbd5e1; }
+ .dark .sidebar-link:not(.active):hover { background-color: rgb(51 65 85); }
+ .glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); }
+ .dark .glass { background: rgba(15,23,42,0.9); }
+ .img-previewable { cursor: zoom-in; transition: opacity 0.2s; }
+ .img-previewable:hover { opacity: 0.9; }
+ #image-preview-modal .preview-img { transform-origin: center; }
+ #image-preview-modal .preview-frame {
+     width: 720px; max-width: calc(100vw - 48px);
+     height: 480px; max-height: calc(100vh - 96px);
+     min-width: 0; min-height: 0; flex: none;
+     box-sizing: border-box;
+ }
+ #image-preview-modal .preview-frame::-webkit-scrollbar { width: 6px; height: 6px; }
+ #image-preview-modal .preview-frame::-webkit-scrollbar-track { background: #1e293b; }
+ #image-preview-modal .preview-frame::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+
+/* CBT accessibility (font scaling + high contrast) */
+:root { --cbt-font-scale: 1; }
+
+#exam-page .cbt-qtext { font-size: calc(1rem * var(--cbt-font-scale)) !important; }
+#exam-page .cbt-atext { font-size: calc(0.875rem * var(--cbt-font-scale)) !important; }
+#exam-page textarea.cbt-essay { font-size: calc(0.875rem * var(--cbt-font-scale)) !important; line-height: 1.6; }
+
+html.cbt-high-contrast #exam-page * { text-shadow: none !important; }
+html.cbt-high-contrast #exam-page .bg-white { background: #ffffff !important; }
+html.cbt-high-contrast #exam-page .text-slate-800,
+html.cbt-high-contrast #exam-page .text-slate-700,
+html.cbt-high-contrast #exam-page .text-slate-600,
+html.cbt-high-contrast #exam-page .text-slate-500,
+html.cbt-high-contrast #exam-page .text-slate-400 { color: #000000 !important; }
+html.cbt-high-contrast #exam-page .border-slate-100,
+html.cbt-high-contrast #exam-page .border-slate-200,
+html.cbt-high-contrast #exam-page .border-slate-300 { border-color: #000000 !important; }
+html.cbt-high-contrast #exam-page .question-nav-btn { border-color: #000000 !important; }
+html.cbt-high-contrast #exam-page .question-nav-btn:focus-visible,
+html.cbt-high-contrast #exam-page button:focus-visible,
+html.cbt-high-contrast #exam-page input:focus-visible,
+html.cbt-high-contrast #exam-page textarea:focus-visible {
+    outline: 3px solid #000000 !important;
+    outline-offset: 2px !important;
+}
+
